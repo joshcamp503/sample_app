@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-	  @base_title = "Ruby on Rails Tutorial Sample App"
+	  @base_title = "| " + "Ruby on Rails Tutorial Sample App"
 	  @user = users(:michael)
     @other_user = users(:archer)
   end
@@ -16,7 +16,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get signup_path
     assert_response :success
-    assert_select "title", "#{@base_title}"
+    assert_select "title", "Sign up #{@base_title}"
   end
 
   test "should redirect edit when not logged in" do
